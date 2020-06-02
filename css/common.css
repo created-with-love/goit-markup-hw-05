@@ -43,9 +43,10 @@ ul {
   color: var(--primaty-text-color);
 }
 
-.contacts-link, .site-nav .link {
- padding-top: 32px;
- padding-bottom: 32px;
+.contacts-link,
+.site-nav .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 /* иконки контактов (письмо и телефон) */
@@ -75,7 +76,7 @@ ul {
 }
 
 .contacts-link {
- align-items: center;
+  align-items: center;
 }
 
 .contacts .contacts-link {
@@ -94,7 +95,6 @@ ul {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-
 }
 .contacts {
   margin-left: auto;
@@ -106,6 +106,7 @@ ul {
 
 .site-nav li:not(:last-child) {
   margin-right: 50px;
+  position: relative;
 }
 
 .contacts .contacts-link:hover,
@@ -138,12 +139,20 @@ ul {
   color: var(--primaty-text-color);
 }
 
+/* подчеркивание текущей страницы */
 .link.chosen-page {
   color: var(--accent-color);
-  border-bottom: 4px solid var(--accent-color);
-  border-width: width: 60px;;
-  border-radius: 2px;
-  padding-bottom: 28px;
+}
+
+.chosen-page::after {
+  position: absolute;
+  content: '';
+  display: block;
+  background-image: url('../images/hover.svg');
+  background-position: bottom;
+  margin-top: 28px;
+  width: 100%;
+  height: 4px;
 }
 
 /* Footer */
@@ -169,7 +178,7 @@ ul {
   color: var(--accent-color);
 }
 .footer-logo-studio {
-  color: var(--white)
+  color: var(--white);
 }
 
 .footer {
@@ -182,7 +191,7 @@ ul {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-style: normal;
-   margin-top: 9px;
+  margin-top: 9px;
 }
 
 .footer-contacts:hover,
@@ -214,7 +223,7 @@ ul {
 }
 
 .footer-action-request:last-child {
- margin-left: 10px;
+  margin-left: 10px;
 }
 
 .footer-boxes {
@@ -245,7 +254,6 @@ ul {
   justify-content: center;
 }
 
-
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
@@ -269,8 +277,7 @@ ul {
   display: flex;
 }
 
-.footer-from
-.footer-input-filed {
+.footer-from .footer-input-filed {
   height: 50px;
 }
 
@@ -289,7 +296,7 @@ ul {
 .footer-button {
   padding-left: 29px;
   padding-right: 28px;
-  
+
   display: inline-flex;
   padding-top: 10px;
   padding-bottom: 10px;
