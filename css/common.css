@@ -43,10 +43,35 @@ ul {
   color: var(--primaty-text-color);
 }
 
+.site-nav .link:not(.chosen-page)::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+
+  opacity: 0;
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.site-nav .link:not(.chosen-page):hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
 .contacts-link,
 .site-nav .link {
+  position: relative;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* иконки контактов (письмо и телефон) */
@@ -58,7 +83,9 @@ ul {
 }
 
 .site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav .link:focus,
+.contacts .contacts-link:hover,
+.contacts .contacts-link:focus {
   color: var(--accent-color);
 }
 
@@ -106,12 +133,6 @@ ul {
 
 .site-nav li:not(:last-child) {
   margin-right: 50px;
-  position: relative;
-}
-
-.contacts .contacts-link:hover,
-.contacts .contacts-link:focus {
-  color: var(--accent-color);
 }
 
 .contacts li:first-child {
@@ -150,7 +171,9 @@ ul {
   display: block;
   background-image: url('../images/hover.svg');
   background-position: bottom;
-  margin-top: 28px;
+
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 4px;
 }
@@ -192,6 +215,8 @@ ul {
   text-decoration: none;
   font-style: normal;
   margin-top: 9px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-contacts:hover,
@@ -252,6 +277,8 @@ ul {
 
   align-items: center;
   justify-content: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -314,6 +341,10 @@ ul {
   background: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-color: var(--accent-color);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-button:hover,
